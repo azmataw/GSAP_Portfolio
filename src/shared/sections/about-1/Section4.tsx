@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState, type FormEvent } from "react";
 import RevealText from "@/shared/effects/RevealText";
 
 // About 1 Section 4 - Contact Us / Get in touch
@@ -95,6 +96,29 @@ const OFFICES = [
 ];
 
 export default function Section4({ classList = "" }: { classList?: string }) {
+    const [submitState, setSubmitState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+    const [submitError, setSubmitError] = useState('');
+    async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        const form = event.currentTarget;
+        setSubmitState('sending');
+        setSubmitError('');
+        const fields = Object.fromEntries(new FormData(form).entries());
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(fields),
+            });
+            const result = await response.json();
+            if (!response.ok) throw new Error(result.error || 'Could not submit enquiry');
+            form.reset();
+            setSubmitState('success');
+        } catch (error) {
+            setSubmitError(error instanceof Error ? error.message : 'Submission failed');
+            setSubmitState('error');
+        }
+    }
     return (
         <section className={`sec-4-about pt-120 pb-120 ${classList}`.trim()}>
             <div className="container">
@@ -175,7 +199,8 @@ export default function Section4({ classList = "" }: { classList?: string }) {
                         </div>
                     </div>
                     <div className="col-xxl-8 col-lg-7 ms-auto pt-lg-0 pt-30">
-                        <form className="sec-4-about-form" action="#" method="post">
+                        <form className="sec-4-about-form" onSubmit={handleContactSubmit}>
+                            <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-10000px" }} />
                             <div className="sec-4-about-form__field">
                                 <input
                                     type="text"
@@ -217,7 +242,7 @@ export default function Section4({ classList = "" }: { classList?: string }) {
                                 />
                             </div>
                             <div className="sec-4-about-form__actions">
-                                <button type="submit" className="sec-4-about-form__btn at-btn">
+                                <button type="submit" disabled={submitState === "sending"} className="sec-4-about-form__btn at-btn">
                                     <span>
                                         <span className="text-1 text-capitalize">Send Message</span>
                                         <span className="text-2 text-capitalize">Send Message</span>
@@ -228,6 +253,10 @@ export default function Section4({ classList = "" }: { classList?: string }) {
                                     </i>
                                 </button>
                             </div>
+                            <p role="status" aria-live="polite">
+                                {submitState === 'success' ? 'Message sent successfully.' : null}
+                                {submitState === 'error' ? submitError : null}
+                            </p>
                             <p className="sec-4-about-form__disclaimer">
                                 By submitting, you agree to our{" "}
                                 <Link to="#" className="sec-4-about-form__link">
