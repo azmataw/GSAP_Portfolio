@@ -139,15 +139,15 @@ export default function Section1() {
                                         {OFFICE_ICON_1}
                                     </div>
                                     <div>
-                                        <h6 className="fw-600">Ofice</h6>
+                                        <h6 className="fw-600">Office</h6>
                                         <span className="fz-font-md neutral-500">
-                                            205 North Michigan Avenue, Suite 810
+                                            I-8 Markaz
                                             <br className="d-block" />
-                                            Chicago, 60601, USA
+                                            Islamabad, Pakistan
                                             <br className="d-block" />
                                             Phone:{" "}
                                             <span className="neutral-900">
-                                                <a href="tel:+1234567890">+1234567890</a>
+                                                <a href="tel:+923453056396">+92 345 305 6396</a>
                                             </span>
                                             <br className="d-block" />
                                             Email:{" "}
@@ -164,13 +164,13 @@ export default function Section1() {
                                     <div>
                                         <h6 className="fw-600">Studio</h6>
                                         <span className="fz-font-md neutral-500">
-                                            245 Fifth Avenue, Suite 1800
+                                            I-8 Markaz
                                             <br className="d-block" />
-                                            New York, NY 10016, USA
+                                            Islamabad, Pakistan
                                             <br className="d-block" />
                                             Phone:{" "}
                                             <span className="neutral-900">
-                                                <a href="tel:+2125557398">+2125557398</a>
+                                                <a href="tel:+923453056396">+92 345 305 6396</a>
                                             </span>
                                             <br className="d-block" />
                                             Email:{" "}
