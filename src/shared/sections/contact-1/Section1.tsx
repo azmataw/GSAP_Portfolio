@@ -149,11 +149,6 @@ export default function Section1() {
                                             <span className="neutral-900">
                                                 <a href="tel:+923453056396">+92 345 305 6396</a>
                                             </span>
-                                            <br className="d-block" />
-                                            Email:{" "}
-                                            <span className="neutral-900">
-                                                <a href="mailto:info@klarus.io">info@klarus.io</a>
-                                            </span>
                                         </span>
                                     </div>
                                 </div>
@@ -171,11 +166,6 @@ export default function Section1() {
                                             Phone:{" "}
                                             <span className="neutral-900">
                                                 <a href="tel:+923453056396">+92 345 305 6396</a>
-                                            </span>
-                                            <br className="d-block" />
-                                            Email:{" "}
-                                            <span className="neutral-900">
-                                                <a href="mailto:info@klarus.io">info@klarus.io</a>
                                             </span>
                                         </span>
                                     </div>
