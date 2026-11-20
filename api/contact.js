@@ -21,7 +21,18 @@ export default async function handler(req, res) {
     if (error) throw error;
     return res.status(200).json({ ok: true });
   } catch (err) {
-    console.error('Contact submission failed:', err instanceof Error ? err.message : 'unknown');
+    // Supabase PostgrestError is often a plain object, not an Error instance.
+    // Log only diagnostic fields; never print API keys, headers or request payloads.
+    const diagnostic = err && typeof err === 'object'
+      ? {
+          message: typeof err.message === 'string' ? err.message : 'unknown',
+          code: typeof err.code === 'string' ? err.code : undefined,
+          details: typeof err.details === 'string' ? err.details : undefined,
+          hint: typeof err.hint === 'string' ? err.hint : undefined,
+          status: typeof err.status === 'number' ? err.status : undefined,
+        }
+      : { message: typeof err === 'string' ? err : 'unknown' };
+    console.error('Contact submission failed:', JSON.stringify(diagnostic));
     return res.status(500).json({ error: 'Unable to send message. Please try again.' });
   }
 }
