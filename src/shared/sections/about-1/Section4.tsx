@@ -80,8 +80,6 @@ const OFFICES = [
         city: "Pakistan",
         phone: "+92 345 305 6396",
         phoneHref: "tel:+923453056396",
-        email: "info@klarus.io",
-        emailHref: "mailto:info@klarus.io",
     },
     {
         icon: OFFICE_ICON_2,
@@ -90,8 +88,6 @@ const OFFICES = [
         city: "Pakistan",
         phone: "+92 345 305 6396",
         phoneHref: "tel:+923453056396",
-        email: "info@klarus.io",
-        emailHref: "mailto:info@klarus.io",
     },
 ];
 
@@ -165,11 +161,6 @@ export default function Section4({ classList = "" }: { classList?: string }) {
                                                     Phone:{" "}
                                                     <span className="neutral-900">
                                                         <Link to={office.phoneHref}>{office.phone}</Link>
-                                                    </span>
-                                                    <br className="d-block" />
-                                                    Email:{" "}
-                                                    <span className="neutral-900">
-                                                        <Link to={office.emailHref}>{office.email}</Link>
                                                     </span>
                                                 </span>
                                             </div>
