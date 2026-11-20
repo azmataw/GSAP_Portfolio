@@ -145,11 +145,6 @@ export default function SideBar({ open, hamburgerOpen, onClose }: SideBarProps) 
                 </a>
               </li>
               <li>
-                <a className="fz-font-lg" href="mailto:info@klarus.io">
-                  info@klarus.io
-                </a>
-              </li>
-              <li>
                 <a className="fz-font-lg" href="#" onClick={(e) => e.preventDefault()}>
                   I-8 Markaz, Islamabad, <br />
                   Pakistan
