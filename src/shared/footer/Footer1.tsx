@@ -89,12 +89,8 @@ export default function Footer1() {
             </div>
             <div className="col-xxl-3 col-lg-5 col-md-8 ms-lg-auto text-lg-end">
               <div className="at-footer-title-wrap">
-                <h6 className="text-white">+1 (437) 879-4050</h6>
-                <h4 className="text-white text-decoration-underline text-wrap">
-                  <a href="mailto:info@klarus.io" className="text-white text-decoration-underline">
-                    info@klarus.io
-                  </a>
-                </h4>
+                <h6 className="text-white">+92 345 305 6396</h6>
+                <h4 className="text-white text-decoration-underline text-wrap"><a href="tel:+923453056396" className="text-white text-decoration-underline">Call Klarus AI</a></h4>
                 <div className="at-footer-widget at-footer-link pt-50">
                   <div className="at-hero-social justify-content-lg-end">
                     {SOCIAL_LINKS.map(({ label, href }) => (
