@@ -140,8 +140,8 @@ export default function SideBar({ open, hamburgerOpen, onClose }: SideBarProps) 
             <h5 className="at-offcanvas-title sm">Get in touch</h5>
             <ul>
               <li>
-                <a className="fz-font-lg" href="tel:+12125557398">
-                  +1 (212) 555-7398
+                <a className="fz-font-lg" href="tel:+923453056396">
+                  +92 345 305 6396
                 </a>
               </li>
               <li>
@@ -151,8 +151,8 @@ export default function SideBar({ open, hamburgerOpen, onClose }: SideBarProps) 
               </li>
               <li>
                 <a className="fz-font-lg" href="#" onClick={(e) => e.preventDefault()}>
-                  Toronto, Ontario, <br />
-                  Canada
+                  I-8 Markaz, Islamabad, <br />
+                  Pakistan
                 </a>
               </li>
             </ul>
